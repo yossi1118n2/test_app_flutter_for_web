@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:app_test/second.dart';
 
 void main() {
   runApp(MyApp());
@@ -100,9 +101,28 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
+            RaisedButton(
+              child: const Text('Button'),
+              color: Colors.blue,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return SecondPage();
+                    },
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),
+
+
+
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
